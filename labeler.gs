@@ -98,10 +98,10 @@ function labeler() {
         // prevent archive if filter explicitly sets "archive" to false (if "archive" is not defined, continue)
         if (filter.archive !== undefined && !filter.archive) 
           archive = false;
+        
+        if (archive) 
+          thread.moveToArchive();
       }
     });
-
-    if (archive) 
-      thread.moveToArchive();
   });
 }
